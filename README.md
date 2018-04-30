@@ -1,3 +1,3 @@
 # websn
 
-> Old school front-end development powered by webpack
+> A simple webpack configuration for building static websites
