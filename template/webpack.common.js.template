@@ -1,0 +1,82 @@
+const path = require('path')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+
+let websnConfig
+
+try {
+  websnConfig = require('./websn.config.json')
+} catch (err) {
+  console.error('No websn.config.json found.')
+  process.exit(1)
+}
+
+let vendorCopy = []
+const nodeModules = path.resolve(__dirname, './node_modules')
+
+for (const copy of websnConfig.vendorCopy) {
+  vendorCopy.push({
+    context: `${nodeModules}/${copy.from}`,
+    from: copy.files,
+    to: copy.to
+  })
+}
+
+module.exports = {
+  entry: path.resolve(
+    __dirname, websnConfig.input.base, websnConfig.input.entry
+  ),
+  output: {
+    filename: websnConfig.output.scripts,
+    path: path.resolve(__dirname, websnConfig.output.base)
+  },
+  resolve: {
+    alias: {
+      '@@': path.resolve(__dirname, websnConfig.input.base)
+    }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      }
+    ]
+  },
+  plugins: [
+    new CleanWebpackPlugin(path.resolve(__dirname, websnConfig.output.base), {
+      verbose: false,
+      watch: false
+    }),
+    new CopyWebpackPlugin([
+      {
+        context: websnConfig.input.base,
+        from: '**/*',
+        ignore: '**/*.{html,sass,scss,js,DS_Store}'
+      },
+      {
+        context: websnConfig.input.base,
+        from: '.**/*',
+        ignore: '.**/*.{html,sass,scss,js,DS_Store}'
+      },
+      ...vendorCopy
+    ])
+  ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: 'styles',
+          test: /\.css$/,
+          chunks: 'all',
+          enforce: true
+        }
+      }
+    }
+  },
+  stats: {
+    entrypoints: false,
+    modules: false
+  }
+}
