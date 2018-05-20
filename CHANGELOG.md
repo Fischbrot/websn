@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.0] - 2018-05-20
+
 ### Added
 
 + Added npm and Snyk badges
@@ -17,4 +19,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 + Initial release
 
-[Unreleased]: https://github.com/mserajnik/websn/compare/1.0.0...develop
+[Unreleased]: https://github.com/mserajnik/websn/compare/1.1.0...develop
+[1.1.0]: https://github.com/mserajnik/websn/compare/1.0.0...1.1.0
