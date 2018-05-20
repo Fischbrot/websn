@@ -1,4 +1,4 @@
-# websn [![Build status][travis-badge]][travis-url] [![JavaScript Standard Style][standardjs-badge]][standardjs-url]
+# websn [![npm version][npm-image]][npm-url] [![Build status][travis-badge]][travis-url] [![Known vulnerabilities][snyk-badge]][snyk-url] [![JavaScript Standard Style][standardjs-badge]][standardjs-url]
 
 > An opinionated webpack configuration generator for traditional front-end
 > development
@@ -228,8 +228,14 @@ You are welcome to help out!
 
 [MIT](LICENSE.md) © Michael Serajnik
 
+[npm-url]: https://www.npmjs.com/package/websn
+[npm-image]: https://img.shields.io/npm/v/websn.svg
+
 [travis-url]: https://travis-ci.com/mserajnik/websn
 [travis-badge]: https://travis-ci.com/mserajnik/websn.svg
+
+[snyk-url]: https://snyk.io/test/github/mserajnik/websn
+[snyk-badge]: https://snyk.io/test/github/mserajnik/websn/badge.svg
 
 [standardjs-url]: https://standardjs.com
 [standardjs-badge]: https://img.shields.io/badge/code_style-standard-brightgreen.svg
