@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
++ Added npm and Snyk badges
+
 ## 1.0.0 - 2018-05-20
 
 ### Added
