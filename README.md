@@ -47,6 +47,7 @@ feature set as rtsn:
   + [CLI](#cli)
   + [Configuration](#configuration)
   + [Build](#build)
+  + [Migrating from rtsn](#migrating-from-rtsn)
 + [Donate](#donate)
 + [Maintainer](#maintainer)
 + [Contribute](#contribute)
@@ -73,7 +74,7 @@ The following features have purposefully been dropped in comparison to rtsn:
   generating static sites, this is not the main focus of websn.
 + [Less][less] support: it does not really do anything better than Sass/SCSS
   but complicates things for people new to Web development by making them
-  choose. If there is demand for it, I'll consider making it an option.
+  choose. If there is demand for it, I will consider making it an option.
 + [ngrok][ngrok] support: ngrok is a great tool and while I would have loved
   to include it, getting it to play nice with the dev server is a bit of a
   pain. It might make a comeback in a later release though!
@@ -207,6 +208,81 @@ user@local:<project name>$ yarn run serve
 ```
 
 To stop the dev server, use <kbd>⌃ Control</kbd> <kbd>C</kbd>.
+
+### Migrating from rtsn
+
+If you want to migrate from rtsn to the webpack configuration generated with
+websn, you will have to make some considerations first:
+
++ Does my project rely on Less?
++ Does my project rely on Pug?
++ Do I need the ngrok tunneling functionality when developing?
+
+All those features are currently not supported. But if the answer to all those
+questions is no, your are good to go.
+
+First of all, you have to create a new project with websn as described under
+[CLI](#cli). Adjust the `package.json` to mimic the one of your legacy project
+after finishing the project generation with websn. You can of course leave out
+all the development-related dependencies rtsn had added (and you do not need
+any longer) and the `rtsnConfig` section itself.
+
+Next, copy over your source code from your legacy project. You will probably
+have to make some adjustments to your code. E.g., while rtsn would process
+your Sass/SCSS separately from your JS, this is not the case with webpack.
+Instead, you will need to import the file that is used under
+`rtsnConfig.files.sassSource` into your webpack entry file (`input.entry` in
+your `websn.config.json`). This could look like this:
+
+```javascript
+import '@@/styles/main.scss'
+```
+
+Finally, you need to make adjustments to your configuration if you do not want
+to adjust your file naming etc. to work with the default configuration in
+`websn.config.js`. E.g., `rtsnConfig.files.jsSource` will likely become your
+`websnConfig.input.entry` under websn while any entries in
+`rtsnConfig.vendorCopy` work pretty much the same but have to be written a
+little bit different.
+
+If in doubt, just try making a build and read the error message if something
+goes wrong. And feel free to send me a message if you need any help.
+
+Here is a complete list of all the settings under `rtsnConfig` in your
+`package.json` and what you should do with them when migrating:
+
++ `port`: becomes `devServer.port`.
++ `baseUrl`: not needed any longer.
++ `directories.source`: becomes `input.base`.
++ `directories.build`: becomes `output.base`.
++ `directories.imgSource`: not needed any longer, webpack looks for images to
+  process recursively in `input.base`.
++ `directories.imgBuild`: not needed any longer. The build directory for any
+  image will be the same under `output.base` as it is under `input.base`. If
+  you have images in multiple directories, this will also work with websn.
++ `directories.htmlSource`: not needed any longer. However, you will need to
+  configure all your HTML entry files with `input.htmlFiles`.
++ `directories.pugSource`: not supported.
++ `directories.markupBuild`: not needed any longer. The build directory for any
+  HTML file will be the same under `output.base` as it is under `input.base`.
+  If you have HTML files in multiple directories, this will also work with
+  websn.
++ `directories.sassSource`: becomes `input.styles`.
++ `directories.lessSource`: not supported.
++ `directories.cssBuild`: becomes `output.styles` when merged with
+  `files.cssBuild` (e.g., `css/site.css`).
++ `directories.jsSource`: not needed any longer.
++ `directories.jsBuild`: becomes `output.scripts` when merged with
+  `files.jsBuild` (e.g., `js/site.js`).
++ `files.sassSource`: not needed any longer. However, you will need to
+  import this file in your `input.entry` as described in more detail above.
++ `files.lessSource`: not supported.
++ `files.jsSource`: becomes `input.entry`.
++ `files.cssBuild`: becomes `output.styles` when merged with
+  `directories.cssBuild` (e.g., `css/site.css`).
++ `files.jsBuild`: becomes `output.scripts` when merged with
+  `directories.jsBuild` (e.g., `js/site.js`).
++ `vendoryCopy`: becomes `vendorCopy`. The syntax is a little bit different.
 
 ## Donate
 
