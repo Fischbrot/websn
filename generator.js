@@ -43,11 +43,11 @@ if (argv._.length) {
       keyword => keyword.length
     )
 
-    let packageJsonTemplate = files.readPackageJsonTemplate()
+    const packageJsonTemplate = files.readPackageJsonTemplate()
 
     if (!packageJsonTemplate) {
       output.printError(
-        'could not read template file "package.json.template".'
+        'could not read template file `package.json.template`.'
       )
       process.exit()
     }
@@ -65,7 +65,7 @@ if (argv._.length) {
 
     if (!files.createPackageJson(packageJson, projectDir)) {
       output.printError(
-        'could not create "package.json" in project directory.'
+        'could not create `package.json` in project directory.'
       )
       process.exit()
     }
@@ -89,7 +89,7 @@ if (argv._.length) {
 } else if (argv.version) {
   output.printVersion()
   process.exit()
-} else {
-  output.printHelp()
-  process.exit()
 }
+
+output.printHelp()
+process.exit()
