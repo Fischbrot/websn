@@ -7,18 +7,8 @@
 
 websn is a [webpack][webpack] configuration generator for front-end development
 and the spiritual successor to [rtsn][rtsn] (the name is an amalgamation of
-_rtsn_ and _webpack_). The goal was to keep most of rtsn's features while
-modernizing everything with webpack and keeping the configuration as simple as
-possible, so even people who have never worked with webpack and/or are new to
-front-end Web development before can pick it up.
-
-Its focus is more on _traditional_ front-end development where you end up with
-your HTML, CSS and JS split up into separate files. This makes it well suited
-for CMS theme development (e.g., for [WordPress][wordpress]). However, the
-configuration is also easily expandable for more modern style SPA development
-with [Vue][vue] or other frameworks.
-
-websn generates a webpack configuration that has a similar feature set as rtsn:
+_rtsn_ and _webpack_). It generates a webpack configuration that has a similar
+feature set as rtsn:
 
 + HTML beautification __or__ minification: the beautified HTML is a great
   starting point for CMS template files while the minified one is ideal for
@@ -47,21 +37,9 @@ websn generates a webpack configuration that has a similar feature set as rtsn:
 + Several configuration options to easily adjust input/output files/directories
   etc. without having to touch the webpack configuration at all.
 
-The following features have purposefully been dropped in comparison to rtsn:
-
-+ [Pug][pug] support: with all the tools available in modern editors that
-  make writing plain HTML easier and more comfortable than ever, Pug is not
-  needed for simple templating anymore. And while it is still useful for
-  generating static sites, this is not the main focus of websn.
-+ [Less][less] support: it does not really do anything better than Sass/SCSS
-  but complicates things for people new to Web development by making them
-  choose.
-+ [ngrok][ngrok] support: ngrok is a great tool and while I would have loved
-  to include it, getting it to play nice with the dev server is a bit of a
-  pain. It might make a comeback in a later release though!
-
 ## Table of contents
 
++ [Background](#background)
 + [Install](#install)
   + [Dependencies](#dependencies)
   + [Updating](#updating)
@@ -73,6 +51,35 @@ The following features have purposefully been dropped in comparison to rtsn:
 + [Maintainer](#maintainer)
 + [Contribute](#contribute)
 + [License](#license)
+
+## Background
+
+websn's goal was to keep most of rtsn's features while modernizing everything
+with webpack and keeping the configuration as simple as possible, so even
+people who have never worked with webpack and/or are new to front-end Web
+development before can pick it up easily.
+
+Its focus is more on _traditional_ front-end development where you end up with
+your HTML, CSS and JS split up into separate files. This makes it well suited
+for CMS theme development (e.g., for [WordPress][wordpress]). However, the
+configuration is also easily expandable for more modern style SPA development
+with [Vue][vue] or other frameworks.
+
+The following features have purposefully been dropped in comparison to rtsn:
+
++ [Pug][pug] support: with all the tools available in modern editors that
+  make writing plain HTML easier and more comfortable than ever, Pug is not
+  needed for simple templating anymore. And while it is still useful for
+  generating static sites, this is not the main focus of websn.
++ [Less][less] support: it does not really do anything better than Sass/SCSS
+  but complicates things for people new to Web development by making them
+  choose. If there is demand for it, I'll consider making it an option.
++ [ngrok][ngrok] support: ngrok is a great tool and while I would have loved
+  to include it, getting it to play nice with the dev server is a bit of a
+  pain. It might make a comeback in a later release though!
+
+Additional features (more generator options, customized webpack configurations,
+support for additional technologies/frameworks etc.) might come in the future.
 
 ## Install
 
