@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 + Cleaned up generator code
 
+### Fixed
+
++ Removed unnecessary emphasization in readme
+
 ## [1.1.0] - 2018-05-20
 
 ### Added

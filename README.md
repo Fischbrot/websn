@@ -49,14 +49,14 @@ websn generates a webpack configuration that has a similar feature set as rtsn:
 
 The following features have purposefully been dropped in comparison to rtsn:
 
-+ _[Pug][pug]_ support: with all the tools available in modern editors that
++ [Pug][pug] support: with all the tools available in modern editors that
   make writing plain HTML easier and more comfortable than ever, Pug is not
   needed for simple templating anymore. And while it is still useful for
   generating static sites, this is not the main focus of websn.
-+ _[Less][less]_ support: it does not really do anything better than Sass/SCSS
++ [Less][less] support: it does not really do anything better than Sass/SCSS
   but complicates things for people new to Web development by making them
   choose.
-+ _[ngrok][ngrok]_ support: ngrok is a great tool and while I would have loved
++ [ngrok][ngrok] support: ngrok is a great tool and while I would have loved
   to include it, getting it to play nice with the dev server is a bit of a
   pain. It might make a comeback in a later release though!
 
