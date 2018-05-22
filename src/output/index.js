@@ -47,7 +47,7 @@ module.exports = {
   },
   printVersion () {
     this.printNewLine()
-    console.log(`${chalk.bold('version:')} ${chalk.blue('1.2.0')}`)
+    console.log(`${chalk.bold('version:')} ${chalk.blue('1.2.1')}`)
   },
   printError (message) {
     this.printNewLine()

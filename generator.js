@@ -89,7 +89,7 @@ if (argv._.length) {
 } else if (argv.version) {
   output.printVersion()
   process.exit()
+} else {
+  output.printHelp()
+  process.exit()
 }
-
-output.printHelp()
-process.exit()
