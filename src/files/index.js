@@ -1,5 +1,6 @@
 const fs = require('fs-extra')
 const path = require('path')
+const sanitize = require('sanitize-filename')
 
 module.exports = {
   directoryExists (dirName) {
@@ -10,26 +11,7 @@ module.exports = {
     }
   },
   isValidDirectoryName (dirName) {
-    const invalidCharacters = [
-      '/',
-      '\\',
-      '|',
-      '.',
-      ':',
-      '?',
-      '<',
-      '>',
-      '*',
-      '"'
-    ]
-
-    for (const character of invalidCharacters) {
-      if (dirName.includes(character)) {
-        return false
-      }
-    }
-
-    return true
+    return ((dirName === sanitize(dirName)) && !dirName.includes('.'))
   },
   createDirectory (dirName) {
     try {

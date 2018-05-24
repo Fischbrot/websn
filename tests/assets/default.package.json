@@ -1,4 +1,10 @@
 {
+  "name": "test-project",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
   "scripts": {
     "build": "webpack -p --config webpack.prod.js",
     "serve": "webpack-dev-server -d --config webpack.dev.js",

@@ -6,10 +6,10 @@ const output = require('./src/output')
 
 output.printLogo()
 
-const argv = require('minimist')(process.argv.slice(2))
+const argv = require('yargs-parser')(process.argv.slice(2))
 
 if (argv._.length) {
-  const projectDir = argv._[0]
+  const projectDir = argv._[0].trim()
 
   if (files.directoryExists(projectDir)) {
     output.printError('directory already exists.')
@@ -17,7 +17,9 @@ if (argv._.length) {
   }
 
   if (!files.isValidDirectoryName(projectDir)) {
-    output.printError('directory name contains invalid characters.')
+    output.printError(
+      'directory name contains invalid characters or is too long.'
+    )
     process.exit()
   }
 
@@ -26,12 +28,12 @@ if (argv._.length) {
 
     const projectName = { name: projectDir }
 
-    const projectConfig = (process.env.CI)
+    const projectConfig = (argv.y)
       ? {
         version: '1.0.0',
-        description: 'Travis CI test',
-        keywords: 'travis ci, test',
-        author: 'Travis CI',
+        description: '',
+        keywords: '',
+        author: '',
         license: 'MIT'
       }
       : await inquirer.askProjectConfig()
