@@ -126,6 +126,14 @@ using `npm init` or `yarn init`) and will then create your project in a new
 directory (relative to your current directory, so make sure to always run websn
 in the directory you want your project directory to be located in).
 
+Alternatively, you can also use the default options by adding the `-y` flag and
+websn will not prompt you for any additional input so you can get started even
+faster:
+
+```zsh
+user@local:~$ websn <project name> -y
+```
+
 After websn has finished, simply switch to your new project directory and
 install the dependencies to finish the setup:
 

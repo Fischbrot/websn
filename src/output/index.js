@@ -22,6 +22,9 @@ module.exports = {
 
     console.log(chalk.bold('commands:'))
     console.log(`new project: ${chalk.green('websn projectName')}`)
+    console.log(
+      `new project with defaults: ${chalk.green('websn projectName -y')}`
+    )
     console.log(`help: ${chalk.green('websn --help')}`)
     console.log(`version: ${chalk.green('websn --version')}`)
 

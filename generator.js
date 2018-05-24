@@ -26,12 +26,12 @@ if (argv._.length) {
 
     const projectName = { name: projectDir }
 
-    const projectConfig = (process.env.CI)
+    const projectConfig = (argv.y)
       ? {
         version: '1.0.0',
-        description: 'Travis CI test',
-        keywords: 'travis ci, test',
-        author: 'Travis CI',
+        description: '',
+        keywords: '',
+        author: '',
         license: 'MIT'
       }
       : await inquirer.askProjectConfig()
