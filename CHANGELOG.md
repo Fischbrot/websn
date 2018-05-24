@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 + Optimized check for disallowed project names
 + Use tables instead of lists for displaying options in readme
++ Use yargs-parser instead of minimist since minimist is no longer maintained
 + Updated dependencies
 
 ## [1.2.1] - 2018-05-22

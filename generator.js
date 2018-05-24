@@ -6,7 +6,7 @@ const output = require('./src/output')
 
 output.printLogo()
 
-const argv = require('minimist')(process.argv.slice(2))
+const argv = require('yargs-parser')(process.argv.slice(2))
 
 if (argv._.length) {
   const projectDir = argv._[0].trim()
