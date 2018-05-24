@@ -9,7 +9,7 @@ output.printLogo()
 const argv = require('minimist')(process.argv.slice(2))
 
 if (argv._.length) {
-  const projectDir = argv._[0]
+  const projectDir = argv._[0].trim()
 
   if (files.directoryExists(projectDir)) {
     output.printError('directory already exists.')
@@ -17,7 +17,9 @@ if (argv._.length) {
   }
 
   if (!files.isValidDirectoryName(projectDir)) {
-    output.printError('directory name contains invalid characters.')
+    output.printError(
+      'directory name contains invalid characters or is too long.'
+    )
     process.exit()
   }
 
