@@ -153,42 +153,24 @@ webpack itself.
 
 The following options are available:
 
-+ `input.base: "src"`: the base input directory. This is where your code is
-  located.
-+ `input.entry: "index.js"`: the entry file. This is where you need to
-  require/import your JS/Sass/SCSS in order to process it with webpack.
-+ `input.htmlFiles: ["index.html"]`: the HTML entry files. You can define as
-  many as you need.
-+ `input.styles: "styles"`: the directory where you Sass/SCSS is located.
-  Important for a correct build process.
-+ `output.base: "dist"`: the base output directory. This is where webpack will
-  output your build to.
-+ `output.styles: "css/site.css"`: the file your styles will be bundled into.
-+ `output.scripts: "js/site.js"`: the file your JavaScript will be bundled
-  into.
-+ `style.minifiedHtml: true`: enables HTML minification on production builds.
-+ `style.beautifiedHtml: true`: enables HTML beautification on production
-  builds. Does not have any effect when `style.minifiedHtml` is enabled as well.
-+ `style.criticalCss: false`: enables critical inline CSS on production builds.
-  Currently only works with the first HTML entry file to not kill performance
-  when there are a lot of entries.
-+ `vendoryCopy: []`: files that should be copied from package directories under
-  `node_modules`. As shown in the example that exists after installation, every
-  instruction takes three properties: `from`, the package directory where you
-  want to copy something from, `files`, a [glob pattern][glob] to match the
-  files you want to copy, and `to`, the target directory relative to the
-  configured `output.base`. Wrong instructions will usually not result in an
-  error.
-+ `devServer.port: 9000`: the port the dev server should be listening on.
-+ `devServer.hot: true`: enables hot module replacement.
-+ `devServer.open: true`: opens a browser tab once the dev server starts.
-+ `devServer.overlay: true`: displays an overlay directly in the browser when
-  there is an error.
-+ `devServer.reloadOnChange: []`: defines the file types that should cause the
-  dev server to restart when files are changed. The default file types should
-  be a good starting point. File types that are handled via loaders
-  (JS/Sass/SCSS) do not have to be included as the dev server can determine
-  changes to them by default.
+Option | Description
+--- | ---
+`input.base: "src"` | The base input directory. This is where your code is located.
+`input.entry: "index.js"` | The entry file. This is where you need to require/import your JS/Sass/SCSS in order to process it with webpack.
+`input.htmlFiles: ["index.html"]` | The HTML entry files. You can define as many as you need.
+`input.styles: "styles"` | The directory where you Sass/SCSS is located. Important for a correct build process.
+`output.base: "dist"` | The base output directory. This is where webpack will output your build to.
+`output.styles: "css/site.css"` | The file your styles will be bundled into.
+`output.scripts: "js/site.js"` | The file your JavaScript will be bundled into.
+`style.minifiedHtml: true` | Enables HTML minification on production builds.
+`style.beautifiedHtml: true` | Enables HTML beautification on production builds. Does not have any effect when `style.minifiedHtml` is enabled as well.
+`style.criticalCss: false` | Enables critical inline CSS on production builds. Currently only works with the first HTML entry file to not kill performance when there are a lot of entries.
+`vendoryCopy: []` | Files that should be copied from package directories under `node_modules`. As shown in the example that exists after installation, every instruction takes three properties: `from`, the package directory where you want to copy something from, `files`, a [glob pattern][glob] to match the files you want to copy, and `to`, the target directory relative to the configured `output.base`. Wrong instructions will usually not result in an error.
+`devServer.port: 9000` | The port the dev server should be listening on.
+`devServer.hot: true` | Enables hot module replacement.
+`devServer.open: true` | Opens a browser tab once the dev server starts.
+`devServer.overlay: true` | Displays an overlay directly in the browser when there is an error.
+`devServer.reloadOnChange: ["html", "jpe?g", "png", "gif", "svg", "ico", "ttf", "eot", "woff", "woff2"]` | Defines the file types that should cause the dev server to restart when files are changed. The default file types should be a good starting point. File types that are handled via loaders (JS/Sass/SCSS) do not have to be included as the dev server can determine changes to them by default.
 
 __Important:__ Make sure to restart the dev server after changing any settings.
 It unfortunately cannot detect configuration changes while it is running.
@@ -243,46 +225,36 @@ to adjust your file naming etc. to work with the default configuration in
 `websn.config.js`. E.g., `rtsnConfig.files.jsSource` will likely become your
 `websnConfig.input.entry` under websn while any entries in
 `rtsnConfig.vendorCopy` work pretty much the same but have to be written a
-little bit different.
+little bit differently.
 
 If in doubt, just try making a build and read the error message if something
 goes wrong. And feel free to send me a message if you need any help.
 
-Here is a complete list of all the settings under `rtsnConfig` in your
+Here is a complete list of all the options under `rtsnConfig` in your
 `package.json` and what you should do with them when migrating:
 
-+ `port`: becomes `devServer.port`.
-+ `baseUrl`: not needed any longer.
-+ `directories.source`: becomes `input.base`.
-+ `directories.build`: becomes `output.base`.
-+ `directories.imgSource`: not needed any longer, webpack looks for images to
-  process recursively in `input.base`.
-+ `directories.imgBuild`: not needed any longer. The build directory for any
-  image will be the same under `output.base` as it is under `input.base`. If
-  you have images in multiple directories, this will also work with websn.
-+ `directories.htmlSource`: not needed any longer. However, you will need to
-  configure all your HTML entry files with `input.htmlFiles`.
-+ `directories.pugSource`: not supported.
-+ `directories.markupBuild`: not needed any longer. The build directory for any
-  HTML file will be the same under `output.base` as it is under `input.base`.
-  If you have HTML files in multiple directories, this will also work with
-  websn.
-+ `directories.sassSource`: becomes `input.styles`.
-+ `directories.lessSource`: not supported.
-+ `directories.cssBuild`: becomes `output.styles` when merged with
-  `files.cssBuild` (e.g., `css/site.css`).
-+ `directories.jsSource`: not needed any longer.
-+ `directories.jsBuild`: becomes `output.scripts` when merged with
-  `files.jsBuild` (e.g., `js/site.js`).
-+ `files.sassSource`: not needed any longer. However, you will need to
-  import this file in your `input.entry` as described in more detail above.
-+ `files.lessSource`: not supported.
-+ `files.jsSource`: becomes `input.entry`.
-+ `files.cssBuild`: becomes `output.styles` when merged with
-  `directories.cssBuild` (e.g., `css/site.css`).
-+ `files.jsBuild`: becomes `output.scripts` when merged with
-  `directories.jsBuild` (e.g., `js/site.js`).
-+ `vendoryCopy`: becomes `vendorCopy`. The syntax is a little bit different.
+Option | Description
+--- | ---
+`port` | Becomes `devServer.port`.
+`baseUrl` | Not needed any longer.
+`directories.source` | Becomes `input.base`.
+`directories.build` | Becomes `output.base`.
+`directories.imgSource` | Not needed any longer, webpack looks for images to process recursively in `input.base`.
+`directories.imgBuild` | Not needed any longer. The build directory for any image will be the same under `output.base` as it is under `input.base`. If you have images in multiple directories, this will also work with websn.
+`directories.htmlSource` | Not needed any longer. However, you will need to configure all your HTML entry files with `input.htmlFiles`.
+`directories.pugSource` | Not supported.
+`directories.markupBuild` | Not needed any longer. The build directory for any HTML file will be the same under `output.base` as it is under `input.base`. If you have HTML files in multiple directories, this will also work with websn.
+`directories.sassSource` | Becomes `input.styles`.
+`directories.lessSource` | Not supported.
+`directories.cssBuild` | Becomes `output.styles` when merged with `files.cssBuild` (e.g., `css/site.css`).
+`directories.jsSource` | Not needed any longer.
+`directories.jsBuild` | Becomes `output.scripts` when merged with `files.jsBuild` (e.g., `js/site.js`).
+`files.sassSource` | Not needed any longer. However, you will need to import this file in your `input.entry` as described in more detail above.
+`files.lessSource` | Not supported.
+`files.jsSource` | Becomes `input.entry`.
+`files.cssBuild` | Becomes `output.styles` when merged with `directories.cssBuild` (e.g., `css/site.css`).
+`files.jsBuild` | Becomes `output.scripts` when merged with `directories.jsBuild` (e.g., `js/site.js`).
+`vendoryCopy` | Becomes `vendorCopy`. The syntax is a little bit different.
 
 ## Donate
 
