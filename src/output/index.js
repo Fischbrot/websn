@@ -50,7 +50,7 @@ module.exports = {
   },
   printVersion () {
     this.printNewLine()
-    console.log(`${chalk.bold('version:')} ${chalk.blue('1.2.1')}`)
+    console.log(`${chalk.bold('version:')} ${chalk.blue('1.3.0')}`)
   },
   printError (message) {
     this.printNewLine()
