@@ -54,7 +54,7 @@ module.exports = {
   },
   printError (message) {
     this.printNewLine()
-    console.log(`${chalk.bold.red('error:')} ${chalk.red(message)}`)
+    console.error(`${chalk.bold.red('error:')} ${chalk.red(message)}`)
   },
   printSuccess (message) {
     this.printNewLine()

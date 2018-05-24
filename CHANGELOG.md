@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 + Added flag for using default options when generating a new project
++ Added project generation tests
 
 ### Changed
 
