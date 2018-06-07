@@ -38,12 +38,14 @@ if (argv._.length) {
       }
       : await inquirer.askProjectConfig()
 
-    projectConfig.keywords = projectConfig.keywords.split(',')
-    projectConfig.keywords = projectConfig.keywords.map(
-      keyword => keyword.trim()
-    ).filter(
-      keyword => keyword.length
-    )
+    projectConfig.keywords = projectConfig.keywords
+      .split(',')
+      .map(
+        keyword => keyword.trim()
+      )
+      .filter(
+        keyword => keyword.length
+      )
 
     const packageJsonTemplate = files.readPackageJsonTemplate()
 
