@@ -31,6 +31,7 @@ module.exports = {
     path: path.resolve(__dirname, websnConfig.output.base)
   },
   resolve: {
+    extensions: ['*', '.js', '.json', '.scss'],
     alias: {
       '@@': path.resolve(__dirname, websnConfig.input.base)
     }
