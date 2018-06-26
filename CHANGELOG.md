@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.4.0] - 2018-06-26
+
 ### Changed
 
 + Replaced postcss-cssnext with postcss-preset-env
@@ -61,7 +63,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 + Initial release
 
-[Unreleased]: https://github.com/mserajnik/websn/compare/1.3.0...develop
+[Unreleased]: https://github.com/mserajnik/websn/compare/1.4.0...develop
+[1.4.0]: https://github.com/mserajnik/websn/compare/1.3.0...1.4.0
 [1.3.0]: https://github.com/mserajnik/websn/compare/1.2.1...1.3.0
 [1.2.1]: https://github.com/mserajnik/websn/compare/1.2.0...1.2.1
 [1.2.0]: https://github.com/mserajnik/websn/compare/1.1.0...1.2.0
