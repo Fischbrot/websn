@@ -1,4 +1,6 @@
 const path = require('path')
+
+const StyleLintPlugin = require('stylelint-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
@@ -41,7 +43,10 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: [
+          'babel-loader',
+          'eslint-loader'
+        ]
       }
     ]
   },
@@ -62,7 +67,10 @@ module.exports = {
         ignore: '.**/*.{html,sass,scss,js,DS_Store}'
       },
       ...vendorCopy
-    ])
+    ]),
+    new StyleLintPlugin({
+      syntax: 'scss'
+    })
   ],
   optimization: {
     splitChunks: {
