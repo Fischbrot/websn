@@ -1,9 +1,11 @@
 const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
-const common = require('./webpack.common.js')
+
 const WriteFileWebpackPlugin = require('write-file-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+const common = require('./webpack.common.js')
 
 let websnConfig
 

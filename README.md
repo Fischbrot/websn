@@ -34,6 +34,9 @@ feature set as rtsn:
 + [webpack-dev-server][webpack-dev-server] for automatic browser refreshing and
   [Hot Module Replacement][hot-module-replacement] during development.
 + Project bootstrapping with useful (dot)files.
++ JS and CSS linting with [ESLint][eslint] and [stylelint][stylelint] using the
+  popular [StandardJS][standardsjs] and [Sass Guidelines][sass-guidelines] per
+  default
 + Several configuration options to easily adjust input/output files/directories
   etc. without having to touch the webpack configuration at all.
 
@@ -316,6 +319,10 @@ You are welcome to help out!
 [imagemin]: https://github.com/imagemin/imagemin
 [webpack-dev-server]: https://webpack.js.org/configuration/dev-server/
 [hot-module-replacement]: https://webpack.js.org/concepts/hot-module-replacement/
+[eslint]: https://eslint.org/
+[stylelint]: https://stylelint.io/
+[standardsjs]: https://standardjs.com/
+[sass-guidelines]: https://sass-guidelin.es/
 [pug]: https://pugjs.org
 [less]: http://lesscss.org
 [ngrok]: https://ngrok.com/

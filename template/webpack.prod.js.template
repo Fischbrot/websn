@@ -1,11 +1,13 @@
 const path = require('path')
 const merge = require('webpack-merge')
-const common = require('./webpack.common.js')
+
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlBeautifyWebpackPlugin = require('html-beautify-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin')
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
+
+const common = require('./webpack.common.js')
 
 let websnConfig
 
