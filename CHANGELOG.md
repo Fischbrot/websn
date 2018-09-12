@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 + Adjusted copyright notices in license to comply with the standard
 + Updated dependencies
++ Updated project dependencies
 
 ## [1.5.0] - 2018-07-05
 
