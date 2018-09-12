@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.6.0] - 2018-09-12
+
+### Changed
+
++ Adjusted copyright notices in license to comply with the standard
++ Updated dependencies
++ Updated project dependencies
+
 ## [1.5.0] - 2018-07-05
 
 ### Added
@@ -75,7 +83,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 + Initial release
 
-[Unreleased]: https://github.com/mserajnik/websn/compare/1.5.0...develop
+[Unreleased]: https://github.com/mserajnik/websn/compare/1.6.0...develop
+[1.6.0]: https://github.com/mserajnik/websn/compare/1.5.0...1.6.0
 [1.5.0]: https://github.com/mserajnik/websn/compare/1.4.0...1.5.0
 [1.4.0]: https://github.com/mserajnik/websn/compare/1.3.0...1.4.0
 [1.3.0]: https://github.com/mserajnik/websn/compare/1.2.1...1.3.0

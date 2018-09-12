@@ -1,6 +1,6 @@
 const path = require('path')
 const { spawnSync } = require('child_process')
-const { test } = require('ava')
+const test = require('ava')
 const fse = require('fs-extra')
 
 test.serial('project generation: create project', t => {
