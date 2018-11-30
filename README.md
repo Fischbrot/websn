@@ -1,4 +1,4 @@
-# websn [![npm version][npm-image]][npm-url] [![Build status][travis-badge]][travis-url] [![Known vulnerabilities][snyk-badge]][snyk-url] [![JavaScript Standard Style][standardjs-badge]][standardjs-url]
+# websn [![npm version][npm-image]][npm] [![Build status][travis-badge]][travis] [![Known vulnerabilities][snyk-badge]][snyk] [![JavaScript Standard Style][standardjs-badge]][standardjs]
 
 > An opinionated webpack configuration generator for traditional front-end
 > development
@@ -97,9 +97,12 @@ user@local:~$ yarn global add websn
 
 ### Dependencies
 
-+ [Node.js][nodejs] (tested on `10.1.0`+)
-+ [Yarn][yarn] (tested on `1.6.0`+)
-  + __or__ [npm][npm] (tested on `6.0.0`+)
++ [Node.js][node-js]
++ [Yarn][yarn]
+
+I usually use the latest versions; if there has not been an update to this
+repository in a while and something breaks on the latest Node/Yarn version,
+please [let me know][issues].
 
 ### Updating
 
@@ -271,7 +274,7 @@ Option | Description
 
 If you like websn and want to buy me a coffee, feel free to donate via PayPal:
 
-[![Donate via PayPal][paypal-image]][paypal-url]
+[![Donate via PayPal][paypal-image]][paypal]
 
 Alternatively, you can also send me BTC:
 
@@ -294,16 +297,16 @@ You are welcome to help out!
 
 [MIT](LICENSE.md) © Michael Serajnik
 
-[npm-url]: https://www.npmjs.com/package/websn
+[npm]: https://www.npmjs.com/package/websn
 [npm-image]: https://img.shields.io/npm/v/websn.svg
 
-[travis-url]: https://travis-ci.com/mserajnik/websn
+[travis]: https://travis-ci.com/mserajnik/websn
 [travis-badge]: https://travis-ci.com/mserajnik/websn.svg
 
-[snyk-url]: https://snyk.io/test/github/mserajnik/websn
+[snyk]: https://snyk.io/test/github/mserajnik/websn
 [snyk-badge]: https://snyk.io/test/github/mserajnik/websn/badge.svg
 
-[standardjs-url]: https://standardjs.com
+[standardjs]: https://standardjs.com
 [standardjs-badge]: https://img.shields.io/badge/code_style-standard-brightgreen.svg
 
 [websn]: screenshot.png
@@ -326,12 +329,12 @@ You are welcome to help out!
 [pug]: https://pugjs.org
 [less]: http://lesscss.org
 [ngrok]: https://ngrok.com/
-[nodejs]: https://nodejs.org/en/
+[node-js]: https://nodejs.org/en/
 [yarn]: https://yarnpkg.com/
 [npm]: https://www.npmjs.com/
 [glob]: https://en.wikipedia.org/wiki/Glob_(programming)
 
-[paypal-url]: https://www.paypal.me/mserajnik
+[paypal]: https://www.paypal.me/mserajnik
 [paypal-image]: https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-rect-paypal-26px.png
 [btc]: https://mserajnik.at/external/btc.png
 
