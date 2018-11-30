@@ -28,7 +28,7 @@ for (const htmlFile of websnConfig.input.htmlFiles) {
       minify: (websnConfig.style.minifiedHtml)
         ? {
           collapseBooleanAttributes: true,
-          collapseInlineTagWhitespace: true,
+          collapseInlineTagWhitespace: false,
           collapseWhitespace: true,
           decodeEntities: true,
           minifyCss: true,
@@ -70,7 +70,9 @@ module.exports = merge(common, {
   },
   plugins: [
     ...htmlWebpackPlugins,
-    ...(((!websnConfig.style.minifiedHtml) && websnConfig.style.beautifiedHtml)
+    ...(((!websnConfig.style.minifiedHtml) &&
+      websnConfig.style.beautifiedHtml &&
+      htmlWebpackPlugins.length)
       ? [
         new HtmlBeautifyWebpackPlugin({
           config: {
@@ -94,8 +96,8 @@ module.exports = merge(common, {
       ? [
         new HtmlCriticalWebpackPlugin({
           base: path.resolve(__dirname, websnConfig.output.base),
-          src: websnConfig.htmlFiles[0],
-          dest: websnConfig.htmlFiles[0],
+          src: websnConfig.input.htmlFiles[0],
+          dest: websnConfig.input.htmlFiles[0],
           inline: true,
           minify: true,
           extract: false,
