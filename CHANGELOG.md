@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 + Added ability to use custom `src` template
 
+### Changed
+
++ Updated webpack configuration
+
 ## [1.7.0] - 2018-11-30
 
 ### Changed

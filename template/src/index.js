@@ -1,3 +1,3 @@
 import '@@/styles/main.scss'
 
-console.log('welcome to websn!')
+console.log(`welcome to ${process.env.APPLICATION_NAME}!`)

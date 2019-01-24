@@ -13,6 +13,7 @@ try {
   websnConfig = require('./websn.config.json')
 } catch (err) {
   console.error('No websn.config.json found.')
+
   process.exit(1)
 }
 
@@ -28,27 +29,6 @@ for (const htmlFile of websnConfig.input.htmlFiles) {
 }
 
 module.exports = merge(common, {
-  module: {
-    rules: [
-      {
-        test: /\.s?[ac]ss$/,
-        use: [
-          'style-loader',
-          'postcss-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              includePaths: [
-                path.resolve(
-                  __dirname, websnConfig.input.base, websnConfig.input.styles
-                )
-              ]
-            }
-          }
-        ]
-      }
-    ]
-  },
   plugins: [
     new WriteFileWebpackPlugin({
       test: new RegExp(
