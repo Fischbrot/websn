@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.8.1] - 2019-01-24
+
 ### Fixed
 
 + Fixed misleading wording in readme
@@ -112,7 +114,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 + Initial release
 
-[Unreleased]: https://github.com/mserajnik/websn/compare/1.8.0...develop
+[Unreleased]: https://github.com/mserajnik/websn/compare/1.8.1...develop
+[1.8.1]: https://github.com/mserajnik/websn/compare/1.8.0...1.8.1
 [1.8.0]: https://github.com/mserajnik/websn/compare/1.7.0...1.8.0
 [1.7.0]: https://github.com/mserajnik/websn/compare/1.6.0...1.7.0
 [1.6.0]: https://github.com/mserajnik/websn/compare/1.5.0...1.6.0
