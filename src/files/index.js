@@ -26,7 +26,9 @@ module.exports = {
     try {
       return JSON.parse(
         fs.readFileSync(
-          path.resolve(__dirname, '../../template/package.json.template')
+          path.resolve(
+            __dirname, '../../template/config/package.json.template'
+          )
         )
       )
     } catch (err) {
@@ -45,10 +47,16 @@ module.exports = {
       return false
     }
   },
-  copyFiles (targetDir) {
+  copyFiles (targetDir, srcTemplateDir) {
     try {
-      fs.copySync(path.resolve(__dirname, '../../template'), targetDir)
+      fs.copySync(path.resolve(__dirname, '../../template/config'), targetDir)
       fs.removeSync(path.resolve(targetDir, 'package.json.template'))
+    } catch (err) {
+      return false
+    }
+
+    try {
+      fs.copySync(srcTemplateDir, `${targetDir}/src`)
     } catch (err) {
       return false
     }

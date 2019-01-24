@@ -145,7 +145,7 @@ install the dependencies to finish the setup:
 
 ```zsh
 user@local:~$ cd <project name>
-user@local:<project name>$ yarn install
+user@local:<project name>$ yarn
 ```
 
 A few other commands are available as well:
