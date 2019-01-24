@@ -38,8 +38,8 @@ module.exports = {
     this.printNewLine()
 
     console.log(chalk.bold('project build:'))
-    console.log(`production: ${chalk.green('yarn run build')}`)
-    console.log(`development: ${chalk.green('yarn run serve')}`)
+    console.log(`production: ${chalk.green('yarn build')}`)
+    console.log(`development: ${chalk.green('yarn serve')}`)
 
     this.printNewLine()
 
