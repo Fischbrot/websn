@@ -185,7 +185,7 @@ Option | Description
 `devServer.hot: true` | Enables hot module replacement.
 `devServer.open: true` | Opens a browser tab once the dev server starts.
 `devServer.overlay: true` | Displays an overlay directly in the browser when there is an error.
-`devServer.reloadOnChange: ["html", "js", "css", "jpe?g", "png", "gif", "svg", "ico", "ttf", "eot", "woff", "woff2"]` | Defines the file types that should cause the dev server to restart when files are changed. The default file types should be a good starting point. File types that are handled via loaders (JS/Sass/SCSS) do not have to be included as the dev server can determine changes to them by default.
+`devServer.reloadOnChange: ["html", "js", "css", "jpe?g", "png", "gif", "svg", "ico", "ttf", "eot", "woff", "woff2"]` | Defines the file types that should cause the browser to refresh when they are changed. The default file types should be a good starting point.
 
 __Important:__ Make sure to restart the dev server after changing any settings.
 It unfortunately cannot detect configuration changes while it is running.
@@ -195,13 +195,13 @@ It unfortunately cannot detect configuration changes while it is running.
 Use the following command to make a new production build:
 
 ```zsh
-user@local:<project name>$ yarn run build
+user@local:<project name>$ yarn build
 ```
 
 And the following to start the dev server:
 
 ```zsh
-user@local:<project name>$ yarn run serve
+user@local:<project name>$ yarn serve
 ```
 
 To stop the dev server, use <kbd>⌃ Control</kbd> <kbd>C</kbd>.
