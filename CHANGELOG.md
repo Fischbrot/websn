@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 
 + Updated webpack configuration
++ Updated Travis CI configuration
 
 ## [1.7.0] - 2018-11-30
 
