@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.8.0] - 2019-01-24
+
+### Added
+
++ Added ability to use custom `src` template
+
+### Changed
+
++ Updated webpack configuration
++ Updated Travis CI configuration
++ Updated dependencies
++ Updated project dependencies
+
 ## [1.7.0] - 2018-11-30
 
 ### Changed
@@ -94,7 +107,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 + Initial release
 
-[Unreleased]: https://github.com/mserajnik/websn/compare/1.7.0...develop
+[Unreleased]: https://github.com/mserajnik/websn/compare/1.8.0...develop
+[1.8.0]: https://github.com/mserajnik/websn/compare/1.7.0...1.8.0
 [1.7.0]: https://github.com/mserajnik/websn/compare/1.6.0...1.7.0
 [1.6.0]: https://github.com/mserajnik/websn/compare/1.5.0...1.6.0
 [1.5.0]: https://github.com/mserajnik/websn/compare/1.4.0...1.5.0

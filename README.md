@@ -31,6 +31,7 @@ feature set as rtsn:
   the assets are not required anywhere in files processed by webpack. Ideal for
   CMS themes or other cases where you might have to incorporate files not
   handled by webpack.
++ The ability to use environment variables in JavaScript.
 + [webpack-dev-server][webpack-dev-server] for automatic browser refreshing and
   [Hot Module Replacement][hot-module-replacement] during development.
 + Project bootstrapping with useful (dot)files.
@@ -145,7 +146,7 @@ install the dependencies to finish the setup:
 
 ```zsh
 user@local:~$ cd <project name>
-user@local:<project name>$ yarn install
+user@local:<project name>$ yarn
 ```
 
 A few other commands are available as well:
@@ -184,7 +185,7 @@ Option | Description
 `devServer.hot: true` | Enables hot module replacement.
 `devServer.open: true` | Opens a browser tab once the dev server starts.
 `devServer.overlay: true` | Displays an overlay directly in the browser when there is an error.
-`devServer.reloadOnChange: ["html", "jpe?g", "png", "gif", "svg", "ico", "ttf", "eot", "woff", "woff2"]` | Defines the file types that should cause the dev server to restart when files are changed. The default file types should be a good starting point. File types that are handled via loaders (JS/Sass/SCSS) do not have to be included as the dev server can determine changes to them by default.
+`devServer.reloadOnChange: ["html", "js", "css", "jpe?g", "png", "gif", "svg", "ico", "ttf", "eot", "woff", "woff2"]` | Defines the file types that should cause the dev server to restart when files are changed. The default file types should be a good starting point. File types that are handled via loaders (JS/Sass/SCSS) do not have to be included as the dev server can determine changes to them by default.
 
 __Important:__ Make sure to restart the dev server after changing any settings.
 It unfortunately cannot detect configuration changes while it is running.

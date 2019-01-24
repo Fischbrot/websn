@@ -31,6 +31,8 @@
     "overlay": true,
     "reloadOnChange": [
       "html",
+      "js",
+      "css",
       "jpe?g",
       "png",
       "gif",

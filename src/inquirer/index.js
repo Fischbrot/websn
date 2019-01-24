@@ -43,6 +43,12 @@ module.exports = {
             return 'please enter the license of your project.'
           }
         }
+      },
+      {
+        name: 'srcTemplateDir',
+        type: 'input',
+        message:
+          'src template directory path (leave empty to use built-in example):'
       }
     ]
 

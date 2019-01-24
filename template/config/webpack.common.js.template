@@ -1,8 +1,11 @@
 const path = require('path')
 
 const StyleLintPlugin = require('stylelint-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const ImageminPlugin = require('imagemin-webpack-plugin').default
+const DotenvPlugin = require('dotenv-webpack')
 
 let websnConfig
 
@@ -10,6 +13,7 @@ try {
   websnConfig = require('./websn.config.json')
 } catch (err) {
   console.error('No websn.config.json found.')
+
   process.exit(1)
 }
 
@@ -47,6 +51,29 @@ module.exports = {
           'babel-loader',
           'eslint-loader'
         ]
+      },
+      {
+        test: /\.s?[ac]ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              url: false
+            }
+          },
+          'postcss-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: [
+                path.resolve(
+                  __dirname, websnConfig.input.base, websnConfig.input.styles
+                )
+              ]
+            }
+          }
+        ]
       }
     ]
   },
@@ -68,9 +95,14 @@ module.exports = {
       },
       ...vendorCopy
     ]),
+    new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
+    new MiniCssExtractPlugin({
+      filename: websnConfig.output.styles
+    }),
     new StyleLintPlugin({
       syntax: 'scss'
-    })
+    }),
+    new DotenvPlugin()
   ],
   optimization: {
     splitChunks: {
