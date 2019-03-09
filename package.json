@@ -1,6 +1,6 @@
 {
   "name": "websn",
-  "version": "1.8.1",
+  "version": "1.9.0",
   "description": "An opinionated webpack configuration generator for traditional front-end development",
   "keywords": [
     "front-end",
@@ -41,15 +41,15 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "fs-extra": "^7.0.1",
-    "inquirer": "^6.2.1",
+    "inquirer": "^6.2.2",
     "sanitize-filename": "^1.6.1",
-    "yargs-parser": "^11.1.1"
+    "yargs-parser": "^13.0.0"
   },
   "devDependencies": {
-    "ava": "1.1.0",
-    "eslint": "^5.12.1",
+    "ava": "1.3.1",
+    "eslint": "^5.15.1",
     "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0"
