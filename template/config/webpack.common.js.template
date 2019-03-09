@@ -78,7 +78,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(path.resolve(__dirname, websnConfig.output.base), {
+    new CleanWebpackPlugin({
       verbose: false,
       watch: false
     }),
