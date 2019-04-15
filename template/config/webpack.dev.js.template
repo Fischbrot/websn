@@ -41,6 +41,8 @@ module.exports = merge(common, {
   devServer: {
     contentBase: path.resolve(__dirname, websnConfig.output.base),
     watchContentBase: true,
+    host: websnConfig.devServer.host,
+    disableHostCheck: websnConfig.devServer.disableHostCheck,
     port: websnConfig.devServer.port,
     open: websnConfig.devServer.open,
     hot: websnConfig.devServer.hot,
