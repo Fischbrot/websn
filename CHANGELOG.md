@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.10.0] - 2019-04-15
+
 ### Added
 
 + Added configuration options for the dev server settings `host` and
@@ -131,7 +133,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 + Initial release
 
-[Unreleased]: https://github.com/mserajnik/websn/compare/1.9.0...develop
+[Unreleased]: https://github.com/mserajnik/websn/compare/1.10.0...develop
+[1.10.0]: https://github.com/mserajnik/websn/compare/1.9.0...1.10.0
 [1.9.0]: https://github.com/mserajnik/websn/compare/1.8.1...1.9.0
 [1.8.1]: https://github.com/mserajnik/websn/compare/1.8.0...1.8.1
 [1.8.0]: https://github.com/mserajnik/websn/compare/1.7.0...1.8.0
