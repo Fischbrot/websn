@@ -3,7 +3,14 @@ const merge = require('webpack-merge')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlBeautifyWebpackPlugin = require('html-beautify-webpack-plugin')
-const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin')
+
+let HtmlCriticalWebpackPlugin
+
+try {
+  HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin')
+} catch (err) {
+  HtmlCriticalWebpackPlugin = null
+}
 
 const common = require('./webpack.common.js')
 
@@ -61,23 +68,26 @@ module.exports = merge(common, {
       ]
       : []
     ),
-    ...(websnConfig.style.criticalCss && websnConfig.input.htmlFiles.length
-      ? [
-        new HtmlCriticalWebpackPlugin({
-          base: path.resolve(__dirname, websnConfig.output.base),
-          src: websnConfig.input.htmlFiles[0],
-          dest: websnConfig.input.htmlFiles[0],
-          inline: true,
-          minify: true,
-          extract: false,
-          width: 375,
-          height: 667,
-          penthouse: {
-            blockJSRequests: false
-          }
-        })
-      ]
-      : []
+    ...(
+        HtmlCriticalWebpackPlugin !== null
+        && websnConfig.style.criticalCss
+        && websnConfig.input.htmlFiles.length
+        ? [
+          new HtmlCriticalWebpackPlugin({
+            base: path.resolve(__dirname, websnConfig.output.base),
+            src: websnConfig.input.htmlFiles[0],
+            dest: websnConfig.input.htmlFiles[0],
+            inline: true,
+            minify: true,
+            extract: false,
+            width: 375,
+            height: 667,
+            penthouse: {
+              blockJSRequests: false
+            }
+          })
+        ]
+        : []
     )
   ]
 })

@@ -1,6 +1,6 @@
 {
   "name": "websn",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "description": "An opinionated webpack configuration generator for traditional front-end development",
   "keywords": [
     "front-end",
@@ -23,7 +23,9 @@
     "websn": "./generator.js"
   },
   "scripts": {
-    "test": "ava --verbose"
+    "test": "ava --verbose",
+    "snyk-protect": "snyk protect",
+    "prepublish": "yarn snyk-protect"
   },
   "ava": {
     "files": [
@@ -38,20 +40,22 @@
     "tap": false,
     "compileEnhancements": true
   },
+  "snyk": true,
   "dependencies": {
     "chalk": "^2.4.2",
-    "fs-extra": "^7.0.1",
-    "inquirer": "^6.3.1",
+    "fs-extra": "^8.1.0",
+    "inquirer": "^6.4.1",
     "sanitize-filename": "^1.6.1",
-    "yargs-parser": "^13.0.0"
+    "snyk": "^1.192.2",
+    "yargs-parser": "^13.1.1"
   },
   "devDependencies": {
-    "ava": "1.4.1",
-    "eslint": "^5.16.0",
+    "ava": "2.1.0",
+    "eslint": "^6.0.1",
     "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.17.1",
-    "eslint-plugin-node": "^8.0.1",
-    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0"
   }
 }

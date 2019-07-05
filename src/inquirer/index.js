@@ -48,7 +48,16 @@ module.exports = {
         name: 'srcTemplateDir',
         type: 'input',
         message:
-          'src template directory path (leave empty to use built-in example):'
+          'source template directory path (leave empty to use built-in ' +
+          'example):'
+      },
+      {
+        name: 'installCritical',
+        type: 'confirm',
+        default: false,
+        message:
+          'do you want to be able to generate critical inline css (not ' +
+          'installing it significantly reduces `node_modules` size)?'
       }
     ]
 
