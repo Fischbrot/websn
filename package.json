@@ -23,7 +23,9 @@
     "websn": "./generator.js"
   },
   "scripts": {
-    "test": "ava --verbose"
+    "test": "ava --verbose",
+    "snyk-protect": "snyk protect",
+    "prepublish": "yarn snyk-protect"
   },
   "ava": {
     "files": [
@@ -38,11 +40,13 @@
     "tap": false,
     "compileEnhancements": true
   },
+  "snyk": true,
   "dependencies": {
     "chalk": "^2.4.2",
     "fs-extra": "^8.1.0",
     "inquirer": "^6.4.1",
     "sanitize-filename": "^1.6.1",
+    "snyk": "^1.192.2",
     "yargs-parser": "^13.1.1"
   },
   "devDependencies": {
