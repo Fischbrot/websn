@@ -39,7 +39,8 @@ if (argv._.length) {
         keywords: '',
         author: '',
         license: 'MIT',
-        srcTemplateDir: path.resolve(__dirname, './template/src')
+        srcTemplateDir: path.resolve(__dirname, './template/src'),
+        installCritical: false
       }
       : await inquirer.askProjectConfig()
 
@@ -67,6 +68,11 @@ if (argv._.length) {
     )
 
     delete packageJson.srcTemplateDir
+    delete packageJson.installCritical
+
+    if (!projectConfig.installCritical) {
+      delete packageJson.devDependencies['html-critical-webpack-plugin']
+    }
 
     if (!files.createDirectory(projectDir)) {
       output.printError(
