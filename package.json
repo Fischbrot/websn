@@ -1,6 +1,6 @@
 {
   "name": "websn",
-  "version": "1.12.0",
+  "version": "1.13.0",
   "description": "An opinionated webpack configuration generator for traditional front-end development",
   "keywords": [
     "front-end",
