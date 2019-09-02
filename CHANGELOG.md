@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.13.0] - 2019-09-02
+
+### Changed
+
++ Updated dependencies
++ Updated project dependencies
+
+### Fixed
+
++ Fixed typos in readme
+
 ## [1.12.0] - 2019-07-11
 
 ### Changed
@@ -154,7 +165,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 + Initial release
 
-[Unreleased]: https://github.com/mserajnik/websn/compare/1.12.0...develop
+[Unreleased]: https://github.com/mserajnik/websn/compare/1.13.0...develop
+[1.13.0]: https://github.com/mserajnik/websn/compare/1.12.0...1.13.0
 [1.12.0]: https://github.com/mserajnik/websn/compare/1.11.0...1.12.0
 [1.11.0]: https://github.com/mserajnik/websn/compare/1.10.0...1.11.0
 [1.10.0]: https://github.com/mserajnik/websn/compare/1.9.0...1.10.0

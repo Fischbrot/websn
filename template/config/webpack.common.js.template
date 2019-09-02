@@ -67,11 +67,13 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               implementation: require('sass'),
-              includePaths: [
-                path.resolve(
-                  __dirname, websnConfig.input.base, websnConfig.input.styles
-                )
-              ]
+              sassOptions: {
+                includePaths: [
+                  path.resolve(
+                    __dirname, websnConfig.input.base, websnConfig.input.styles
+                  )
+                ]
+              }
             }
           }
         ]

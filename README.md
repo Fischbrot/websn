@@ -180,7 +180,7 @@ Option | Description
 `style.minifiedHtml: true` | Enables HTML minification on production builds.
 `style.beautifiedHtml: true` | Enables HTML beautification on production builds. Does not have any effect when `style.minifiedHtml` is enabled as well.
 `style.criticalCss: false` | Enables critical inline CSS on production builds. Currently only works with the first HTML entry file to not kill performance when there are a lot of entries. This option is ignored if you choose that you do not want to be able to generate critical inline CSS when creating your project.
-`vendoryCopy: []` | Files that should be copied from package directories under `node_modules`. As shown in the example that exists after installation, every instruction takes three properties: `from`, the package directory where you want to copy something from, `files`, a [glob pattern][glob] to match the files you want to copy, and `to`, the target directory relative to the configured `output.base`. Wrong instructions will usually not result in an error.
+`vendorCopy: []` | Files that should be copied from package directories under `node_modules`. As shown in the example that exists after installation, every instruction takes three properties: `from`, the package directory where you want to copy something from, `files`, a [glob pattern][glob] to match the files you want to copy, and `to`, the target directory relative to the configured `output.base`. Wrong instructions will usually not result in an error.
 `devServer.host: "localhost"` | Sets the host. To bind to all hosts use the catch-all `0.0.0.0`.
 `devServer.disableHostCheck: false` | Disables host checking. Needs to be set to `true` when, e.g., working on a WordPress theme under a different domain than the one specified in `devServer.host`, otherwise features like browser refreshing will not work. __Use with care__ since this will make you vulnerable to DNS rebinding attacks.
 `devServer.port: 9000` | The port the dev server should be listening on.
@@ -271,7 +271,7 @@ Option | Description
 `files.jsSource` | Becomes `input.entry`.
 `files.cssBuild` | Becomes `output.styles` when merged with `directories.cssBuild` (e.g., `css/site.css`).
 `files.jsBuild` | Becomes `output.scripts` when merged with `directories.jsBuild` (e.g., `js/site.js`).
-`vendoryCopy` | Becomes `vendorCopy`. The syntax is a little bit different.
+`vendorCopy` | Becomes `vendorCopy`. The syntax is a little bit different.
 
 ## Donate
 
